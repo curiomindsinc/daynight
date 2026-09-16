@@ -12,6 +12,20 @@ Textures can't load from `file://`, so serve the folder:
 node _serve.cjs      # http://localhost:8792
 ```
 
+## Standalone file (CDN deploy)
+
+`daynight.html` is the file to share or embed. It runs from anywhere: three.js
+comes from jsDelivr, and the textures come from this repo on jsDelivr, pinned to a
+commit SHA. If those fail, it uses the same textures from the three.js repo.
+
+After changing `index.html` or `assets/`:
+
+```
+git commit -am "..." && git push      # the pinned commit must be public first
+./build.sh                            # rewrites daynight.html, pinned to HEAD
+git add daynight.html && git commit -m "Rebuild daynight.html" && git push
+```
+
 ## Files
 
 - `index.html` — the whole sim (three.js 0.160 from jsDelivr via importmap)
