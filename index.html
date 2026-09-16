@@ -70,6 +70,18 @@
   .stage-hint{
     position:absolute;left:12px;bottom:10px;color:var(--dim);font-size:11px;pointer-events:none;
   }
+  #credit{
+    position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:2;
+    padding:7px 16px;text-align:center;font-size:12px;white-space:nowrap;
+    background:rgba(10,14,24,.72);border:1px solid var(--line-2);border-radius:14px;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    box-shadow:0 4px 24px rgba(0,0,0,.45);
+  }
+  #credit .credit-line{color:var(--muted)}
+  #credit .credit-line b{color:var(--text)}
+  #credit .credit-links{margin-top:2px;color:var(--muted)}
+  #credit .credit-links a{color:var(--cool);text-decoration:none}
+  #credit .credit-links a:hover{text-decoration:underline}
   .stage-btns{position:absolute;right:10px;top:10px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 
   .btn{
@@ -146,6 +158,7 @@
   .tick::before{content:"";display:block;width:1px;height:4px;background:currentColor;margin:0 auto 0}
   input[type=range]{width:100%;accent-color:var(--sun);margin:0;display:block}
 
+  @media (max-width:1200px){ .stage-hint{top:12px;bottom:auto;right:170px} }
   @media (max-width:860px){
     body{overflow:auto}
     #app{display:flex;flex-direction:column;height:auto;min-height:100dvh}
@@ -156,6 +169,7 @@
     aside{order:3;border-left:none;border-top:1px solid var(--line);overflow:visible}
     header .sub{display:none}
     .sep{display:none}
+    #credit{font-size:11px;padding:6px 12px;bottom:10px}
     .slider-wrap{grid-template-columns:40px 1fr 56px;gap:6px}
   }
   @media (prefers-reduced-motion:reduce){ .btn:active{transform:none} }
@@ -178,6 +192,10 @@
         <button class="btn" id="btnReset" title="Reset the camera">Reset view</button>
       </div>
       <div class="stage-hint">Drag to look around · scroll to zoom · click Earth to pick a spot</div>
+      <div id="credit">
+        <div class="credit-line">Created by <b>Mr Lau Chin Hang</b></div>
+        <div class="credit-links">🏫 <a href="https://www.instagram.com/curiominds.inc/" target="_blank" rel="noopener noreferrer">@curiominds.inc</a> · ▶ <a href="https://www.youtube.com/@Curiominds.inc88" target="_blank" rel="noopener noreferrer">YouTube</a> · 🌐 <a href="https://curiomindsinc.pages.dev/" target="_blank" rel="noopener noreferrer">Website</a></div>
+      </div>
     </div>
 
     <aside>
